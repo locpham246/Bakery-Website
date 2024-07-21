@@ -1,0 +1,17 @@
+{% extends 'core.html' %}
+{% block core_body%}
+<div class="index">
+    <h1>Welcome to my Bakery page!</h1>
+        {% if products %}
+        {% for product in products %}
+        <div class="card">
+            <div>
+                <a href="/products/{{product.id}}">{{product.id}}</a>
+                <b>{{product.title}}</b>
+            </div>
+            <small>{{product.body}}</small>
+        </div>
+        {% endfor %}
+        {% endif %}
+</div>
+{% endblock core_body%}
